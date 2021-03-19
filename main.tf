@@ -88,12 +88,6 @@ resource "aws_route_table_association" "hashicat" {
   route_table_id = aws_route_table.hashicat.id
 }
 
-module "s3-bucket" {
-  source  = "app.terraform.io/DQuinn10-training/s3-bucket/aws"
-  version = "1.15.0"
-  bucket_prefix = "DQuinn10"
-}
-
 data "aws_ami" "ubuntu" {
   most_recent = true
 
